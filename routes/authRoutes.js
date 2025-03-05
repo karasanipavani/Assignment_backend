@@ -69,8 +69,9 @@ router.get(
 
       res.cookie("token", token, { httpOnly: true });
 
+      // Redirect to the frontend
       res.redirect(
-        `https://assignment-backend-iivs.onrender.com/auth/google/callback?accessToken=${accessToken}&refreshToken=${refreshToken}&token=${token}&id=${id}`
+        `https://assignment-frontend-nine-beryl.vercel.app/auth/google/callback?accessToken=${accessToken}&refreshToken=${refreshToken}&token=${token}&id=${id}`
       );
         } catch (error) {
       console.error("Error handling Google callback:", error);
